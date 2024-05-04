@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>portfolio</title>
+
+    <!-- //-----------header----------// -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10%;
+        /* background-color: #563d7c; */
+      }
+      nav .logo h1 {
+        color: #563d7c;
+
+        font-family: Lexend Deca;
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 64px;
+      }
+      nav .logo h1 span {
+        color: #eab308;
+        font-family: Lexend Deca;
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 64px;
+      }
+      .navContent ul li {
+        display: inline-block;
+        padding: 0px 15px;
+        list-style: none;
+      }
+      .navContent ul li a {
+        text-decoration: none;
+        color: black;
+      }
+      header {
+        background: rgba(7, 7, 7, 0) url(images/profile.png);
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: 50%;
+        height: 100vh;
+      }
+
+      .headerContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+        margin: auto;
+        height: 80%;
+      }
+      .writtenContent {
+        display: flex;
+        width: 486px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .writtenContent .top_paragraph {
+        align-self: stretch;
+        color: #fdc435;
+        font-family: Lexend Deca;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 168.75% */
+        text-transform: uppercase;
+      }
+      .writtenContent h1 {
+        color: #333;
+
+        /* title/h1 */
+        font-family: Playfair Display;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 76.8px */
+        padding-bottom: 30px;
+      }
+      .bottom_paragraph {
+        color: var(--Gray-3, #828282);
+
+        /* body/24px */
+        font-family: Nunito;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 38px; /* 150% */
+      }
+      .header_button {
+        padding: 8px 24px;
+        border-radius: 8px;
+        background: var(--brand-yellow, #fdc435);
+        font-weight: 600;
+      }
+
+      /* //--------about ME---------// */
+      .about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+        gap: 10%;
+      }
+      .about p {
+        color: #6b7280;
+
+        font-family: Lexend Deca;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 27px;
+        padding: 40px 0px;
+      }
+      .about h1 {
+        color: #563d7c;
+
+        font-family: Lexend Deca;
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 64px;
+      }
+      .about h1 span {
+        color: #eab308;
+        font-family: Lexend Deca;
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 64px;
+      }
+      .about button {
+        border-radius: 8px;
+        background: #fdc435;
+        padding: 8px 24px;
+        border-style: none;
+        font-weight: 600;
+      }
+
+      /* /////////------------Skills----------------///// */
+      .skills_heading {
+        width: 70%;
+        margin: 50px auto;
+        display: flex;
+        align-items: center;
+      }
+      .skills_heading h1 {
+        width: 25%;
+        display: block;
+        /* border: 1px solid black; */
+        text-align: center;
+      }
+      .skills {
+        width: 70%;
+        display: flex;
+        margin: auto;
+        flex-wrap: wrap;
+        align-items: center;
+        /* gap: 120px; */
+        /* background-color: red; */
+      }
+      .skills div {
+        flex-basis: 25%;
+        text-align: center;
+        padding: 30px 0;
+      }
+      /* ///--------------------project_1-------------/// */
+      .projects {
+        background: url(images/canvas.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        height: 100vh;
+        width: 100%;
+        position: relative;
+      }
+      .projects .inner_section {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .projects .project_1 {
+        height: 415px;
+        background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+        border: 1px solid black;
+        flex-basis: 30%;
+        text-align: center;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        background: #262c4d;
+      }
+      .projects .project_1 img {
+        width: 100%;
+      }
+      .projects .project_1 p {
+        padding: 30px 0;
+        color: rgba(255, 255, 255, 0.87);
+
+        text-align: center;
+        font-family: Be Vietnam;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .projects .project_1 a {
+        align-self: baseline;
+        margin: auto;
+        padding: 7px 20px;
+        border-radius: 4px;
+        border: 2px solid #fff;
+        background: rgba(52, 61, 104, 0.08);
+        font-family: Be Vietnam;
+        color: rgba(255, 255, 255, 0.87);
+      }
+
+      /* ///-----------------contact---------------//// */
+      .contact {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: antiquewhite;
+        flex: 1;
+      }
+      /* /////-------------------footer------------/// */
+      footer {
+        width: 100%;
+        height: 50vh;
+      }
+      .mainImage {
+        width: 100%;
+        height: 100%;
+        background: url(images/footer.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* display: flex;
+        justify-content: space-between;
+        align-items: center; */
+        position: relative;
+      }
+      .innerImage {
+        width: 100%;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      /* .leftImage {
+      }
+      .rightImage {
+      } */
+
+      .sideImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ////------------------header -------------///// -->
+    <header>
+      <nav>
+        <div class="logo">
+          <h1>About <span>Me.</span></h1>
+        </div>
+
+        <div class="navContent">
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="headerContent">
+        <div class="writtenContent">
+          <div class="content">
+            <p class="top_paragraph">Hello, Welcome</p>
+            <h1>Hello, my name is Rajesh pandey</h1>
+            <p class="bottom_paragraph">
+              I'm a proficient web developer skilled in HTML, CSS, JavaScript,
+              and Node.js. With a focus on crafting dynamic projects, I've built
+              feature-rich websites and interactive CRUD applications. Explore
+              my portfolio to see my expertise in action.
+            </p>
+          </div>
+          <div class="button">
+            <button class="header_button">Projects</button>
+            <button class="header_button">Linkdin</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- //////----------------- about me section -----------------/// -->
+    <section class="about">
+      <div class="picture">
+        <img src="images/about.png" alt="" />
+      </div>
+      <div class="content">
+        <h1>About <span>Me.</span></h1>
+        <p>
+          movative web developer blending design finesse with dynamic
+          functionality. Proficient in HTML, CSS, JavaScript, and Node.js.
+          Skilled in crafting user-centric interfaces and robust back-end
+          systems. Adept problem solver, poised to tackle new challenges in
+          creative ways. Let's shape the digital world together.
+        </p>
+
+        <button>Contact</button>
+      </div>
+    </section>
+
+    <!-- ////---------------------Skills Section-----------------//// -->
+    <div class="skills_heading">
+      <h1>My Skills</h1>
+    </div>
+
+    <section class="skills">
+      <div class="skill_1">
+        <img src="images/HTML5.png" alt="" />
+        <p>HTML5</p>
+      </div>
+
+      <div class="skill_1">
+        <img src="images/CSS3.png" alt="" />
+        <p>CSS3</p>
+      </div>
+
+      <div class="skill_1">
+        <img src="images/JS.png" alt="" />
+        <p>JavaScript</p>
+      </div>
+
+      <div class="skill_1">
+        <img src="images/Bootstrap.png" alt="" />
+        <p>Bootstrap</p>
+      </div>
+
+      <div class="skill_1">
+        <img src="images/node JS.png" alt="" />
+        <p>Node JS</p>
+      </div>
+
+      <div class="skill_1">
+        <img src="images/mongo-DB.png" alt="" />
+        <p>Mongo DB</p>
+      </div>
+
+      <div class="skill_1">
+        <img src="images/figma.png" alt="" />
+        <p>Figma</p>
+      </div>
+      <div class="skill_1">
+        <img src="images/git.png" alt="" />
+        <p>GIT</p>
+      </div>
+    </section>
+
+    <div class="skills_heading">
+      <h1>My Skills</h1>
+    </div>
+    <section class="other_skills skills">
+      <div>Prompt Engineering</div>
+      <div>Communication</div>
+      <div>Leadership</div>
+      <div>Team work</div>
+      <div>Problem solving</div>
+      <div>Adaptibility</div>
+      <div>Creative</div>
+    </section>
+
+    <section class="projects">
+      <div class="inner_section">
+        <div class="project_1">
+          <img src="images/university.png" alt="" />
+          <p>Made a University template using HTML 5, CSS and JS.</p>
+          <a href="#">Lern more</a>
+        </div>
+        <div class="project_1">
+          <img src="images/blog.png" alt="" />
+        </div>
+        <div class="project_1">
+          <img src="images/weather.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- /////-----------------contact section------------------////// -->
+    <section class="contact">
+      <div class="image">
+        <img src="images/contact.png" alt="" />
+      </div>
+      <div class="form">
+        <form action="">
+          <input
+            type="email"
+            id="email"
+            name="enter email address"
+            placeholder="email"
+          />
+          <input
+            type="text"
+            id="message"
+            name="message"
+            placeholder="Enter message"
+          />
+        </form>
+        <input type="submit" id="submit" name="submit" />
+      </div>
+    </section>
+
+    <!-- //////-----------footer--------/////// -->
+    <footer>
+      <div class="mainImage">
+        <div class="innerImage">
+          <div class="leftImage">
+            <p>my social media links</p>
+
+            <img src="images/instagram.png" alt="" />
+            <img src="images/likdin.png" alt="" />
+            <img src="images/mail.png" alt="" />
+          </div>
+          <div class="rightImge">
+            <p>more projects I've workde on</p>
+            <div class="sideImage">
+              <img src="images/footer-git.png" alt="" />
+              <p>@rajesh-706 on github</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
